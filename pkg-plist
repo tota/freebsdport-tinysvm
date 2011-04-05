@@ -1,0 +1,14 @@
+bin/tinysvm_classify
+bin/tinysvm_learn
+bin/tinysvm_model
+include/tinysvm.h
+include/TinySVM/base_example.h
+include/TinySVM/classifier.h
+include/TinySVM/kernel.h
+include/TinySVM/example.h
+include/TinySVM/misc.h
+include/TinySVM/model.h
+include/TinySVM/param.h
+lib/libtinysvm.a
+lib/libtinysvm.la
+lib/libtinysvm.so.3.0

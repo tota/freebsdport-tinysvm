@@ -1,0 +1,11 @@
+--- src/Makefile.am.orig	2002-08-20 12:00:45.000000000 +0900
++++ src/Makefile.am	2011-04-05 14:59:46.000000000 +0900
+@@ -27,7 +27,7 @@
+ pkginclude_HEADERS = model.h example.h base_example.h param.h \
+                      misc.h kernel.h classifier.h
+ 
+-bin_PROGRAMS = svm_learn svm_classify svm_model
++bin_PROGRAMS = tinysvm_learn tinysvm_classify tinysvm_model
+ 
+ svm_learn_SOURCES = svm_learn.cpp
+ svm_learn_LDADD = libtinysvm.la

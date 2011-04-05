@@ -1,0 +1,42 @@
+--- src/Makefile.in.orig	2002-08-20 15:02:09.000000000 +0900
++++ src/Makefile.in	2011-04-05 15:34:41.000000000 +0900
+@@ -111,7 +111,7 @@
+                      misc.h kernel.h classifier.h
+ 
+ 
+-bin_PROGRAMS = svm_learn svm_classify svm_model
++bin_PROGRAMS = tinysvm_learn tinysvm_classify tinysvm_model
+ 
+ svm_learn_SOURCES = svm_learn.cpp
+ svm_learn_LDADD = libtinysvm.la
+@@ -135,8 +135,8 @@
+ libtinysvm_la_OBJECTS =  getopt.lo getopt1.lo param.lo classifier.lo \
+ q_matrix.lo base_example.lo example.lo model.lo oneclass_solver.lo \
+ svm_solver.lo svr_solver.lo qp_solver.lo
+-bin_PROGRAMS =  svm_learn$(EXEEXT) svm_classify$(EXEEXT) \
+-svm_model$(EXEEXT)
++bin_PROGRAMS =  tinysvm_learn$(EXEEXT) tinysvm_classify$(EXEEXT) \
++tinysvm_model$(EXEEXT)
+ PROGRAMS =  $(bin_PROGRAMS)
+ 
+ svm_learn_OBJECTS =  svm_learn.$(OBJEXT)
+@@ -283,15 +283,15 @@
+ 	  rm -f $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
+ 	done
+ 
+-svm_learn$(EXEEXT): $(svm_learn_OBJECTS) $(svm_learn_DEPENDENCIES)
+-	@rm -f svm_learn$(EXEEXT)
++tinysvm_learn$(EXEEXT): $(svm_learn_OBJECTS) $(svm_learn_DEPENDENCIES)
++	@rm -f tinysvm_learn$(EXEEXT)
+ 	$(CXXLINK) $(svm_learn_LDFLAGS) $(svm_learn_OBJECTS) $(svm_learn_LDADD) $(LIBS)
+ 
+-svm_classify$(EXEEXT): $(svm_classify_OBJECTS) $(svm_classify_DEPENDENCIES)
++tinysvm_classify$(EXEEXT): $(svm_classify_OBJECTS) $(svm_classify_DEPENDENCIES)
+ 	@rm -f svm_classify$(EXEEXT)
+ 	$(CXXLINK) $(svm_classify_LDFLAGS) $(svm_classify_OBJECTS) $(svm_classify_LDADD) $(LIBS)
+ 
+-svm_model$(EXEEXT): $(svm_model_OBJECTS) $(svm_model_DEPENDENCIES)
++tinysvm_model$(EXEEXT): $(svm_model_OBJECTS) $(svm_model_DEPENDENCIES)
+ 	@rm -f svm_model$(EXEEXT)
+ 	$(CXXLINK) $(svm_model_LDFLAGS) $(svm_model_OBJECTS) $(svm_model_LDADD) $(LIBS)
+ .cpp.o:

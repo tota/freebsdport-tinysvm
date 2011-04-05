@@ -1,0 +1,11 @@
+--- man/Makefile.in.orig	2002-08-20 15:32:11.000000000 +0900
++++ man/Makefile.in	2011-04-05 17:52:03.000000000 +0900
+@@ -82,7 +82,7 @@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
+ 
+-man_MANS = svm_learn.1 svm_classify.1 svm_model.1
++man_MANS = tinysvm_learn.1 tinysvm_classify.1 tinysvm_model.1
+ EXTRA_DIST = $(man_MANS)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h

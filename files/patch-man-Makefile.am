@@ -1,0 +1,10 @@
+--- man/Makefile.am.orig	2001-01-14 11:55:27.000000000 +0900
++++ man/Makefile.am	2011-04-05 17:51:39.000000000 +0900
+@@ -1,6 +1,6 @@
+ # Process this file with automake to produce Makefile.in
+ 
+-man_MANS = svm_learn.1 svm_classify.1 svm_model.1
++man_MANS = tinysvm_learn.1 tinysvm_classify.1 tinysvm_model.1
+ EXTRA_DIST = $(man_MANS)
+ 
+ update-man:

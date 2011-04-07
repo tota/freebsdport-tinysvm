@@ -24,8 +24,8 @@ PORTDOCS=	*.html *.css
 MAN1=	tinysvm_classify.1 tinysvm_learn.1 tinysvm_model.1
 
 post-configure:
-.for man1 in ${MAN1:S/tiny//}
-	@${MV} ${WRKSRC}/man/${man1} ${WRKSRC}/man/tiny${man1}
+.for man1 in ${MAN1}
+	@${MV} ${WRKSRC}/man/${man1:S|tiny||} ${WRKSRC}/man/${man1}
 .endfor
 
 .if !defined(NOPORTDOCS)
